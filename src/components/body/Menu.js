@@ -32,6 +32,7 @@ class Menu extends Component {
 
 
     render() {
+        document.title = "Menu-Restaurant App";
         const menu = this.state.dishes.map(item => {
             return (
                 <MenuItem
