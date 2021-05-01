@@ -5,8 +5,6 @@ import DishDetail from './DishDetail';
 import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 
 
-
-
 class Menu extends Component {
     state = {
         dishes: DISHES,

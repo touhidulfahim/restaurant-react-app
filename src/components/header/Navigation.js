@@ -29,13 +29,13 @@ class Navigation extends Component {
                                 <Link to="/" className="nav-link active">Home</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/menu" className="nav-link active">Menu</Link>
+                                <Link to="/menu" className="nav-link">Menu</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/about" className="nav-link active">About</Link>
+                                <Link to="/about" className="nav-link">About</Link>
                             </NavItem>
                             <NavItem>
-                                <Link to="/contact" className="nav-link active">Contact</Link>
+                                <Link to="/contact" className="nav-link">Contact</Link>
                             </NavItem>
                         </Nav>
                     </Collapse>
