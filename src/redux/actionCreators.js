@@ -21,6 +21,28 @@ export const commentConcat = (comment) => ({
     payload: comment
 })
 
+
+// export const addFeedback = (firstName, lastName, phone, email, agree, message) => dispatch => {
+//     const newFeedback = {
+//         firstName: firstName,
+//         lastName: lastName,
+//         phone: phone,
+//         email: email,
+//         agree: agree,
+//         message: message,
+//     }
+//     axios.post(baseUrl + 'feedback', newFeedback)
+//         .then(response => response.data)
+//         .then(feedback => dispatch(feedbackConcat(feedback)))
+// }
+
+// export const feedbackConcat = (feedback) => ({
+//     type: actionTypes.ADD_FEEDBACK,
+//     payload: feedback
+// })
+
+
+
 export const commentLoading = () => ({
     type: actionTypes.COMMENT_LOADING,
 })

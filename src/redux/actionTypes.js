@@ -1,4 +1,6 @@
 export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_FEEDBACK = 'ADD_FEEDBACK';
+
 
 export const LOAD_COMMENT = 'LOAD_COMMENT';
 export const COMMENT_LOADING = 'COMMENT_LOADING';

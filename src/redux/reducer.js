@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import { InitialContactForm } from './forms';
 import { createForms } from 'react-redux-form';
 import * as actionTypes from './actionTypes';
-import { act } from 'react-dom/test-utils';
 
 const dishedReducer = (dishState = { isLoading: false, dishes: [] }, dishAction) => {
     switch (dishAction.type) {
@@ -41,10 +40,6 @@ const commentReducer = (commentState = { isLoading: true, comments: [] }, commen
                 isLoading: true,
                 comments: []
             };
-
-
-
-
         case actionTypes.ADD_COMMENT:
             let comment = commentAction.payload;
             return {
@@ -56,6 +51,21 @@ const commentReducer = (commentState = { isLoading: true, comments: [] }, commen
             return commentState;
     }
 }
+
+// const feedbackReducer = (feedbackState, feedbackAction) => {
+//     switch (feedbackAction.type) {
+//         case actionTypes.ADD_FEEDBACK:
+//             let feedback = feedbackAction.payload;
+//             return {
+//                 ...commentState,
+//                 feedback: feedbackState.feedback.concat(feedback)
+//             }
+//         default:
+//             return feedbackState;
+//     }
+// }
+
+
 
 
 export const Reducer = combineReducers({
