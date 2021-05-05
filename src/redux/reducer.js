@@ -23,6 +23,10 @@ const dishedReducer = (dishState = { isLoading: false, dishes: [] }, dishAction)
     }
 }
 
+
+
+
+
 const commentReducer = (commentState = { isLoading: true, comments: [] }, commentAction) => {
     switch (commentAction.type) {
         case actionTypes.LOAD_COMMENT:
@@ -43,9 +47,10 @@ const commentReducer = (commentState = { isLoading: true, comments: [] }, commen
 
         case actionTypes.ADD_COMMENT:
             let comment = commentAction.payload;
-            comment.id = commentState.length;
-            comment.date = new Date().toDateString()
-            return commentState.concat(comment)
+            return {
+                ...commentState,
+                comments: commentState.comments.concat(comment)
+            }
 
         default:
             return commentState;
