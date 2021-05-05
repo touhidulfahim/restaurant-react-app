@@ -47,6 +47,18 @@ class Contact extends Component {
                     }, 2000)
                 }
             })
+            .catch(error => {
+                this.setState({
+                    alert: true,
+                    alertType: "danger",
+                    alertText: error.messages,
+                })
+                setTimeout(() => {
+                    this.setState({
+                        alert: false
+                    })
+                }, 2000)
+            })
 
         this.props.resetFeedbackForm();
     }

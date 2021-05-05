@@ -22,6 +22,8 @@ export const commentConcat = (comment) => ({
 })
 
 
+
+
 // export const addFeedback = (firstName, lastName, phone, email, agree, message) => dispatch => {
 //     const newFeedback = {
 //         firstName: firstName,
@@ -52,6 +54,11 @@ export const loadComments = comments => ({
     payload: comments
 })
 
+export const commentFailed = (errMess) => ({
+    type: actionTypes.COMMENT_FAILED,
+    payload: errMess
+})
+
 export const fetchComments = () => {
     return dispatch => {
         dispatch(commentLoading());
@@ -59,12 +66,9 @@ export const fetchComments = () => {
         axios.get(baseUrl + "comments")
             .then(response => response.data)
             .then(comments => dispatch(loadComments(comments)))
+            .catch(error => dispatch(commentFailed(error.message)))
     }
 }
-
-
-
-
 
 
 export const loadDishes = dishes => ({
@@ -77,6 +81,13 @@ export const dishesLoading = () => ({
     type: actionTypes.DISHES_LOADING
 })
 
+
+export const dishesFailed = (errMess) => ({
+    type: actionTypes.DISHES_FAILED,
+    payload: errMess
+})
+
+
 export const fetchDishes = () => {
     return dispatch => {
         dispatch(dishesLoading());
@@ -84,5 +95,6 @@ export const fetchDishes = () => {
         axios.get(baseUrl + "dishes")
             .then(response => response.data)
             .then(dishes => dispatch(loadDishes(dishes)))
+            .catch(error => dispatch(dishesFailed(error.message)))
     }
 }
